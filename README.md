@@ -21,6 +21,45 @@
 - 支持 Reference 按需加载
 - 多种写作模式切换（默认 / 长文 / 精简）
 - 可维护的模块化 Skill 结构
+- 24 种 AI 写作模式检测与修复（基于 Wikipedia AI Cleanup 项目）
+- 5 维度质量评分体系（直接性 / 节奏 / 信任度 / 真实性 / 精炼度）
+- "个性与灵魂"写作指南，注入真实作者感
+
+---
+
+## AI 写作模式检测
+
+本 Skill 内置了 24 种常见 AI 写作模式的检测规则，基于 [Wikipedia: Signs of AI writing](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing) 整理。覆盖以下类别：
+
+| 类别 | 示例模式 |
+|------|----------|
+| 内容模式 | 夸大象征意义、宣传式语言、肤浅分析、模糊归因 |
+| 语言模式 | 高频 AI 词汇、系动词回避、否定式排比、三段式法则 |
+| 风格模式 | 破折号过度使用、粗体过度使用、表情符号装饰 |
+| 交流模式 | 协作交流痕迹、知识截止日期免责声明、谄媚语气 |
+| 填充模式 | 填充短语、过度限定、通用积极结论 |
+
+每个模式都配有改写前/改写后示例，详见 `references/rewrite-patterns.md` 和 `references/banned-phrases.md`。
+
+> 本部分整合自 [op7418/Humanizer-zh](https://github.com/op7418/Humanizer-zh)，原始内容基于 Wikipedia WikiProject AI Cleanup 维护的 [Signs of AI writing](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing) 页面。
+
+---
+
+## 质量评分体系
+
+改写完成后可进行 5 维度评分（总分 50）：
+
+| 维度 | 评估内容 |
+|------|----------|
+| 直接性 | 直接陈述事实还是绕圈宣告？ |
+| 节奏 | 句子长度是否变化？ |
+| 信任度 | 是否尊重读者智慧？ |
+| 真实性 | 听起来像真人说话吗？ |
+| 精炼度 | 还有可删减的内容吗？ |
+
+- 45-50 分：优秀，已去除 AI 痕迹
+- 35-44 分：良好，仍有改进空间
+- 低于 35 分：需要重新修订
 
 ---
 
